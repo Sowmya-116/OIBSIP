@@ -1,15 +1,45 @@
-function convertTemp() {
-  const input = document.getElementById("tempInput").value;
-  const unit = document.getElementById("unit").value;
-  let result = "";
+function convertTemperature() {
+    const input = parseFloat(document.getElementById("tempInput").value);
+    const from = document.getElementById("fromUnit").value;
+    const to = document.getElementById("toUnit").value;
+    let resultText = "";
 
-  if (isNaN(input)) {
-    result = "Please enter a valid number";
-  } else if (unit === "celsius") {
-    result = `${(input * 9/5 + 32).toFixed(2)} °F`;
-  } else if (unit === "fahrenheit") {
-    result = `${((input - 32) * 5/9).toFixed(2)} °C`;
-  }
+    if (isNaN(input)) {
+        resultText = "❌ Please enter a valid number";
+    } else {
+        let tempInCelsius;
 
-  document.getElementById("result").innerText = result;
+        // Convert input to Celsius first
+        switch (from) {
+            case "celsius":
+                tempInCelsius = input;
+                break;
+            case "fahrenheit":
+                tempInCelsius = (input - 32) * 5 / 9;
+                break;
+            case "kelvin":
+                tempInCelsius = input - 273.15;
+                break;
+        }
+
+        let finalTemp;
+
+        // Convert Celsius to target unit
+        switch (to) {
+            case "celsius":
+                finalTemp = tempInCelsius;
+                resultText = `${finalTemp.toFixed(2)} °C`;
+                break;
+            case "fahrenheit":
+                finalTemp = (tempInCelsius * 9 / 5) + 32;
+                resultText = `${finalTemp.toFixed(2)} °F`;
+                break;
+            case "kelvin":
+                finalTemp = tempInCelsius + 273.15;
+                resultText = `${finalTemp.toFixed(2)} K`;
+                break;
+        }
+    }
+
+    document.getElementById("result").textContent = resultText;
 }
