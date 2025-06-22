@@ -1,65 +1,149 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9ff;
     color: #333;
-}
-
-header {
-    background-color: hwb(201 38% 0%);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+    scroll-behavior: smooth;
 }
 
 nav {
-    background-color: hsl(0, 2%, 37%);
-    overflow: hidden;
-    text-align: center;
+    background-color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+nav h1 {
+    color: #6c63ff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
-    display: inline-block;
-    color: white;
-    padding: 14px 20px;
     text-decoration: none;
+    color: #333;
+    font-weight: 500;
 }
 
-nav a:hover {
-    background-color: #575757;
-}
-
-.intro {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 40px;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.column {
-    flex: 1 1 300px;
-    padding: 20px;
-}
-
-.features {
-    background-color: #e9ecef;
+.hero {
     text-align: center;
-    padding: 40px;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #6c63ff, #a29bfe);
+    color: white;
 }
 
-.features ul {
-    list-style: none;
-    padding: 0;
+.hero h2 {
+    font-size: 36px;
 }
 
-.features li {
-    padding: 10px 0;
+.cta-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: white;
+    color: #6c63ff;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+#about {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #eceaff;
 }
 
 footer {
-    background-color: hwb(201 38% 0%);
+    text-align: center;
+    background-color: #6c63ff;
+    color: white;
+    padding: 30px 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+#features {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 28px;
+    color: #6c63ff;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #6c63ff;
+    margin: 15px 0 10px;
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+header {
+
     color: white;
     text-align: center;
-    padding: 20px;
+
+}
+
+h1 {
+    text-align: center;
 }
